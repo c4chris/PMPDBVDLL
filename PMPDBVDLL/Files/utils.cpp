@@ -11,6 +11,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include "PMPDBVDLL.h"
 #include "Globals.h"
 #include "utils.h"
 

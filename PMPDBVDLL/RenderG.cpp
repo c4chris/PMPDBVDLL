@@ -7,6 +7,7 @@
 
 #include "pch.h"
 #include <stdio.h>
+#include "PMPDBVDLL.h"
 #include "Globals.h"
 #include "RenderG.h"
 

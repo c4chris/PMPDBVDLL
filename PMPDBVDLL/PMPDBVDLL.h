@@ -52,10 +52,12 @@ struct SwiftCallbacks
 typedef struct SwiftCallbacks SwiftCallbacks;
 
 PMPDBVDLL_API void SwiftCBSetup(const SwiftCallbacks *_Nonnull callbacks);
+PMPDBVDLL_API void DebugCBSetup(void(*callback)(const char*));
 PMPDBVDLL_API void GL_init_Atom_Colors(void);
 PMPDBVDLL_API void GLRender(void);
 PMPDBVDLL_API short InitGlobals(void);
 PMPDBVDLL_API void doPDBinput(const char * _Nullable, const char * _Nullable);
 
 extern int (*_Nullable printfDelegate)(const char* fmt, va_list va);
+extern void (*_Nullable debugDelegate)(const char* msg);
 }

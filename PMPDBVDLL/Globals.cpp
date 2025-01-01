@@ -6,6 +6,7 @@
 //
 
 #include "pch.h"
+#include "PMPDBVDLL.h"
 #include "Globals.h"
 
 short nbLayer;
@@ -34,3 +35,4 @@ aaDef aaName[] = {{"ALA", 'A', 1, 1, " CB C3 H  H ", FALSE},
 
 /* Pointer to the C++ function that handles printf calls in error/debug situations */
 int (*printfDelegate)(const char* fmt, va_list va);
+void (*debugDelegate)(const char* msg);

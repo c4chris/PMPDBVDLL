@@ -11,18 +11,28 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+#include "PMPDBVDLL.h"
 #include "Globals.h"
 #include "init.h"
 #include "utils.h"
 #include "pdb.h"
 #include "SwiftCallback.h"
 
+void DebugCBSetup(void(*callback)(const char*))
+{
+  debugDelegate = callback;
+}
+
 int myLog(const char* fmt, ...)
 {
   va_list va;
   va_start(va, fmt);
   int res = -1;
-  if (printfDelegate != NULL) {
+  if (debugDelegate != NULL) {
+    char buf[1024];
+    res = vsnprintf(buf, 1024, fmt, va);
+    debugDelegate(buf);
+  } else if (printfDelegate != NULL) {
     res = printfDelegate(fmt, va);
   } else {
     res = vfprintf(stdout, fmt, va);

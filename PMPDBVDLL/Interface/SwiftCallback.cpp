@@ -6,6 +6,7 @@
 //
 
 #include "pch.h"
+#include "PMPDBVDLL.h"
 #include "Globals.h"
 #include "RenderG.h"
 #include "render.h"

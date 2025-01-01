@@ -10,8 +10,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-
 #include <Memory.h>
+
+#include "PMPDBVDLL.h"
 #include "Globals.h"
 #include "utils.h"
 #include "render.h"
